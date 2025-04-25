@@ -1,4 +1,6 @@
+'use client';
 import Link from 'next/link';
+import { FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -31,11 +33,15 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
-              {['Twitter', 'GitHub', 'LinkedIn'].map((social) => (
-                <a key={social} href="#" className="text-gray-400 hover:text-white transition-colors">
-                  {social}
-                </a>
-              ))}
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <FaTwitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <FaFacebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <FaLinkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </div>
