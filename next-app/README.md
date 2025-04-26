@@ -20,3 +20,11 @@ npm install
 ```bash
 npm run dev
 ```
+
+## Stripe Testing
+
+Card: 4242 4242 4242 4242
+Exp: Any future date
+CVC: Any 3 digits
+ZIP: Any 5 digits
+Feedback submitted
