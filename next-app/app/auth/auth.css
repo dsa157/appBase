@@ -1,0 +1,17 @@
+.auth-btn {
+  @apply w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all;
+}
+
+.auth-btn-google {
+  @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50;
+}
+
+.auth-btn-facebook {
+  @apply bg-[#1877F2] text-white hover:bg-[#166FE5];
+}
+
+.auth-btn-apple {
+  @apply bg-black text-white hover:bg-gray-900;
+}
+body {
+}
