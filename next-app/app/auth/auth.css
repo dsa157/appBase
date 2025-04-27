@@ -13,5 +13,21 @@
 .auth-btn-apple {
   @apply bg-black text-white hover:bg-gray-900;
 }
+
+.auth-container {
+  @apply min-h-[100dvh] w-full flex items-center justify-center;
+  contain: strict;
+  content-visibility: auto;
+  will-change: transform, opacity;
+}
+
+.auth-dialog {
+  @apply w-full max-w-md mx-auto p-6 bg-white rounded-xl shadow-xl;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
 body {
+  @apply bg-gradient-to-br from-blue-50 to-indigo-100;
+  min-height: 100dvh;
 }

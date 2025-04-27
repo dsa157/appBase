@@ -33,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col bg-gray-50">
+    <html lang="en" className="h-full">
+      <body className="min-h-full flex flex-col" style={{contain: 'paint'}}>
         <Providers>
           <Header />
           <main className="flex-grow">
