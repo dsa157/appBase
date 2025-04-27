@@ -40,3 +40,19 @@ Feedback submitted
 1. modify /etc/hosts
 2. modify docker-config.yml
 3. modify .env.local
+
+
+## TODO
+1. HTTPS
+2. resolve npm warnings
+3. apple/facebook login
+4. show dynamic info on the profile page
+5. backend
+6. add more features
+7. add more security features
+8. add more performance features
+9. add more accessibility features
+10. add more SEO features
+11. add more analytics features
+12. add more monitoring features
+13. add more backup features

@@ -1,8 +1,10 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export function GoogleLoginButton() {
+  const router = useRouter();
   const handleLogin = async () => {
     console.log('Initiating Google login...');
     try {
@@ -13,7 +15,9 @@ export function GoogleLoginButton() {
       } else {
         console.log('Google login successful', result);
         if (result?.url) {
-          window.location.href = result.url;
+          router.push(result.url);
+        } else {
+          router.push('/');
         }
       }
     } catch (error) {

@@ -3,8 +3,10 @@ import Link from 'next/link'
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa'
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
+  const router = useRouter();
   const [loading, setLoading] = useState({
     google: false,
     facebook: false,
@@ -13,17 +15,20 @@ export default function LoginForm() {
 
   const handleSocialLogin = async (provider: string) => {
     setLoading(prev => ({...prev, [provider]: true}));
-    console.log(`Initiating ${provider} login...`);
     
     try {
-      const result = await signIn(provider, { redirect: false });
+      const result = await signIn(provider, { 
+        redirect: false,
+        callbackUrl: '/'
+      });
       
       if (result?.error) {
         console.error(`${provider} login failed:`, result.error);
       } else {
-        console.log(`${provider} login successful`, result);
         if (result?.url) {
-          window.location.href = result.url;
+          router.push(result.url);
+        } else {
+          router.push('/');
         }
       }
     } catch (error) {

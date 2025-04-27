@@ -3,8 +3,10 @@ import Link from 'next/link'
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa'
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function SignupForm() {
+  const router = useRouter();
   const [loading, setLoading] = useState({
     google: false,
     facebook: false,
@@ -23,7 +25,14 @@ export default function SignupForm() {
       } else {
         console.log(`${provider} signup successful`, result);
         if (result?.url) {
-          window.location.href = result.url;
+          // Close the dialog if this is rendered within one
+          const dialog = document.querySelector('dialog[open]');
+          if (dialog) {
+            (dialog as HTMLDialogElement).close();
+          }
+          router.push(result.url);
+        } else {
+          router.push('/');
         }
       }
     } catch (error) {
