@@ -1,9 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Providers } from './providers';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: 'AppBase | Modern Web Solutions',
   description: 'Your all-in-one solution for modern web applications',
   openGraph: {
@@ -33,11 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-gray-50">
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

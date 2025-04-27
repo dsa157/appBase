@@ -8,10 +8,14 @@ services:
       context: .
       args:
         - NODE_ENV=development
+    hostname: appbase.127.0.0.1.nip.io
     ports:
       - 3000:3000
+    extra_hosts:
+      - "appbase.127.0.0.1.nip.io:127.0.0.1"
     environment:
       - NODE_ENV=development
+      - NEXT_PUBLIC_BASE_URL=http://appbase.local:3000
       - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
       - STRIPE_SECRET_KEY
       - STRIPE_BASIC_PRICE_ID

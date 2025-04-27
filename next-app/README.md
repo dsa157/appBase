@@ -21,6 +21,12 @@ npm install
 npm run dev
 ```
 
+## API Keys
+1. Google - https://console.cloud.google.com/apis/dashboard
+2. Facebook - https://developers.facebook.com
+3. Apple - https://developer.apple.com
+2. Stripe - https://dashboard.stripe.com
+
 ## Stripe Testing
 
 Card: 4242 4242 4242 4242
@@ -28,3 +34,9 @@ Exp: Any future date
 CVC: Any 3 digits
 ZIP: Any 5 digits
 Feedback submitted
+
+## Custom Domain Support (ex: using appBase.local)
+
+1. modify /etc/hosts
+2. modify docker-config.yml
+3. modify .env.local
