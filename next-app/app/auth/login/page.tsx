@@ -17,7 +17,10 @@ export default function LoginPage() {
   const handleSocialLogin = async (provider: string) => {
     setLoading(prev => ({...prev, [provider]: true}));
     try {
-      const result = await signIn(provider, { redirect: false });
+      const result = await signIn(provider, { 
+        redirect: false,
+        callbackUrl: process.env.NEXTAUTH_URL || 'https://yourdomain.com'
+      });
       if (result?.url) router.push(result.url);
     } finally {
       setLoading(prev => ({...prev, [provider]: false}));
