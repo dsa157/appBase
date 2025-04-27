@@ -1,0 +1,34 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+
+services:
+  next-app:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+      - STRIPE_SECRET_KEY
+      - STRIPE_BASIC_PRICE_ID
+      - STRIPE_BASIC_LINK
+      - STRIPE_PRO_PRICE_ID
+      - STRIPE_PRO_LINK
+      - STRIPE_ENTERPRISE_PRICE_ID
+      - STRIPE_ENTERPRISE_LINK
+    command: npm run dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    restart: unless-stopped
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 3

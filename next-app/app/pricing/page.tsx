@@ -49,7 +49,7 @@ export default function PricingPage() {
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold mb-8">Choose Your Plan</h1>
+      <h1 className="text-3xl font-bold mb-8">xChoose Your Plan</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {plans.map((plan) => (
           <div 
