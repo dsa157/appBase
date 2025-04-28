@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: 'AppBase | Modern Web Solutions',
   description: 'Your all-in-one solution for modern web applications',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico'  // For iOS/Safari
+  },
   openGraph: {
     title: 'AppBase',
     description: 'Your all-in-one solution for modern web applications',

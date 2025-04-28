@@ -1,5 +1,5 @@
 'use client'
-import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa';
+import { FaGoogle, FaFacebook } from 'react-icons/fa';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -9,8 +9,7 @@ export default function SignupPage() {
   const router = useRouter();
   const [loading, setLoading] = useState({
     google: false,
-    facebook: false,
-    apple: false
+    facebook: false
   });
 
   const handleSocialSignup = async (provider: string) => {
@@ -46,14 +45,6 @@ export default function SignupPage() {
           >
             <FaFacebook className="text-lg" />
             {loading.facebook ? 'Processing...' : 'Continue with Facebook'}
-          </button>
-          <button
-            onClick={() => handleSocialSignup('apple')}
-            disabled={loading.apple}
-            className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium bg-black text-white hover:bg-gray-900"
-          >
-            <FaApple className="text-lg" />
-            {loading.apple ? 'Processing...' : 'Continue with Apple'}
           </button>
         </div>
         <p className="mt-4 text-center text-sm text-gray-600">

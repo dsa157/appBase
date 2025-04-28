@@ -58,7 +58,6 @@ Let's Encrypt doesn't issue certificates for local development domains like appb
 * * brew install mkcert
 * * mkcert -install
 * * mkcert appbase.dsa157.com
-* sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain certs/appbase.dsa157.com.crt
 * Use a local domain name and add it to your hosts file
 * * sudo nano /etc/hosts
 * * 127.0.0.1 appbase.dsa157.com
