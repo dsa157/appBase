@@ -19,3 +19,9 @@ npm-debug.log*
 # IDE specific files
 .idea/
 .vscode/
+
+# Certificates
+certs/
+*.pem
+*.key
+*.crt

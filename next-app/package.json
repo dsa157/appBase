@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:https": "NODE_EXTRA_CA_CERTS=$(pwd)/certs/localhost.crt next dev --https --key $(pwd)/certs/localhost.key --cert $(pwd)/certs/localhost.crt -H appbase.127.0.0.1.nip.io",
+    "dev:https": "NODE_EXTRA_CA_CERTS=$(pwd)/certs/appbase.dsa157.com.pem next dev --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

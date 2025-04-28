@@ -2,6 +2,7 @@
 # If you need more help, visit the Docker Compose reference guide at
 # https://docs.docker.com/go/compose-spec-reference/
 
+
 services:
   next-app:
     container_name: next-app
@@ -9,16 +10,16 @@ services:
       context: .
       args:
         - NODE_ENV=development
-    hostname: appbase.127.0.0.1.nip.io
+    hostname: ${DOMAIN_NAME}
     ports:
       - 3000:3000
       - 3001:3001 # For HTTPS
     extra_hosts:
-      - "appbase.127.0.0.1.nip.io:127.0.0.1"
+      - "${DOMAIN_NAME}:127.0.0.1"
     environment:
       - NODE_ENV=development
-      - NEXT_PUBLIC_BASE_URL=https://appbase.127.0.0.1.nip.io:443
-      - NODE_EXTRA_CA_CERTS=/app/certs/localhost.crt
+      - NEXT_PUBLIC_BASE_URL=https://${DOMAIN_NAME}:443
+      - NODE_EXTRA_CA_CERTS=/app/certs/${DOMAIN_NAME}.crt
       - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
       - STRIPE_SECRET_KEY
       - STRIPE_BASIC_PRICE_ID
@@ -27,7 +28,7 @@ services:
       - STRIPE_PRO_LINK
       - STRIPE_ENTERPRISE_PRICE_ID
       - STRIPE_ENTERPRISE_LINK
-    command: npm run dev
+    command: npm run dev:https
     volumes:
       - .:/app
       - /app/node_modules
@@ -56,9 +57,8 @@ services:
     depends_on:
       - next-app
     extra_hosts:
-      - "appbase.127.0.0.1.nip.io:127.0.0.1"
+      - "${DOMAIN_NAME}:127.0.0.1"
 
 networks:
   next-app-network:
     driver: bridge
-
