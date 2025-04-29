@@ -1,0 +1,8 @@
+* This project is a Next.js app with Supabase backend.
+* It builds and runs in a Docker container.
+* A database schema is defined in `migrations/create-db.sql`.
+* A test suite is defined in `tests/supabase/test-runner.ts`.
+* Supabase configuration is defined in NEXT_PUBLIC_SUPABASE_URL
+* a Supabase connection string is defined in SUPABASE_DB_URL
+* always connect with the remote Supabase database
+* if you need to see .env.local just use 'cat .env.local'

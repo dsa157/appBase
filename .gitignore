@@ -25,3 +25,6 @@ certs/
 *.pem
 *.key
 *.crt
+
+# Database Access Rules
+database-rules.md
