@@ -11,15 +11,18 @@
     "lint": "next lint",
     "test:supabase": "ts-node --esm --experimental-specifier-resolution=node tests/supabase/test-runner.ts",
     "test:supabase:crud": "ts-node --esm --experimental-specifier-resolution=node tests/supabase/test-runner.ts --crud",
-    "test:supabase:auth": "ts-node --esm --experimental-specifier-resolution=node tests/supabase/test-runner.ts --auth"
+    "test:supabase:auth": "ts-node --esm --experimental-specifier-resolution=node tests/supabase/test-runner.ts --auth",
+    "seed-db": "ts-node ../scripts/seed-db.ts"
   },
   "dependencies": {
     "@auth/core": "^0.34.2",
     "@stripe/stripe-js": "^2.4.0",
     "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/forms": "^0.5.3",
+    "@types/csv-parse": "^1.1.12",
     "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.14",
+    "csv-parse": "^5.6.0",
     "glob": "^10.3.10",
     "next": "^15.3.1",
     "next-auth": "^4.24.11",

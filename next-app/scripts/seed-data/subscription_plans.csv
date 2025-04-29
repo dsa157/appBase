@@ -1,0 +1,4 @@
+id,name,description,price,billing_cycle,features
+basic,Basic,"Basic plan with limited features",9.99,30 days,"{""storage"":""5GB"",""devices"":1}"
+premium,Premium,"Premium plan with all features",29.99,30 days,"{""storage"":""50GB"",""devices"":5}"
+annual,Annual,"Annual subscription with discount",99.99,365 days,"{""storage"":""100GB"",""devices"":10}"

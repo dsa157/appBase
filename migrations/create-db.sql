@@ -6,6 +6,7 @@ CREATE TABLE analytics_events (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES auth.users(id),
   event_type TEXT NOT NULL,
+  path TEXT,
   event_data JSONB,
   user_agent TEXT,
   ip_address TEXT,
