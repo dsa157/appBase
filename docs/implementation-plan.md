@@ -64,9 +64,45 @@ Database Schema Design Tasks
 - [ ] Set up profile picture storage
 - [ ] Implement audit trail triggers
 
-### Next Steps
-1. Implement Row-Level Security policies for all tables
-2. Add performance indexes on frequently queried columns
-3. Complete profile picture storage integration
-4. Finalize GDPR data retention policies
-5. Write comprehensive test suite for database operations
+### Frontend-Backend Integration (Top Priority)
+
+### User Management
+- [ ] Implement user registration flow
+- [ ] Create user profile management UI
+- [ ] Build admin user management panel
+- [ ] Implement GDPR-compliant user deletion (cascade all user data)
+- [ ] Set up profile picture upload to Supabase storage
+
+### Subscription/Payment Flow  
+- [ ] Connect Stripe checkout to Supabase
+- [ ] Handle payment success/failure webhooks
+- [ ] Sync subscription status with user records
+- [ ] Build subscription management UI
+- [ ] Implement payment failure recovery flow
+
+### Core User Flows
+- [ ] Authentication flow (login/signup/logout)
+- [ ] Profile editing workflow
+- [ ] Subscription upgrade/downgrade
+- [ ] Payment method management
+
+## Backend Enhancements
+
+### Database
+- [ ] Add user deletion cascade rules
+- [ ] Implement storage bucket for profile pics
+- [ ] Set up Stripe webhook handlers
+
+### API
+- [ ] Create user management endpoints
+- [ ] Build subscription status API
+- [ ] Develop profile picture upload API
+
+## Testing & Monitoring
+- [ ] End-to-end test critical user flows
+- [ ] Monitor payment processing
+- [ ] Set up error tracking
+
+## Analytics & Performance
+- [ ] Basic usage analytics
+- [ ] Query optimization
